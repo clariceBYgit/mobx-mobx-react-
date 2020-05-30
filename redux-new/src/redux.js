@@ -16,7 +16,7 @@ const reducer = function( state={num:0},action) {
         state.num--;
         break;
       default:
-        state=state
+        return state
     }
     return {...state}  //相当于对象的copy
 }

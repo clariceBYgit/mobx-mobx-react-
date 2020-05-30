@@ -4,6 +4,11 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux'
 import {Provider,connect} from 'react-redux'
 
+// redux累加器二
+import FirstRedux from './Reduxfloder/FirstRedux'
+import store2 from './Reduxfloder/store'
+
+
 class Counter extends React.Component{
   render(){
     console.log(this.props)
@@ -88,11 +93,20 @@ const App = connect (
 
 
 
-
-ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-  document.getElementById('root')
+// redux累加器1
+/*
+ReactDOM.render(<Provider store={store}><App /></Provider>,
+document.getElementById('root')
 );
+*/
 
+
+
+// redux累加器2
+const renderState = ()=>{
+  ReactDOM.render(<FirstRedux />,
+    document.getElementById('root')
+    );
+}
+renderState()
+store2.subscribe(renderState)

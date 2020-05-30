@@ -67,7 +67,7 @@ function reducer(state={num:0},action) {
 
 // }
 
-const store = createStore(reducer)
+// const store = createStore(reducer)
 
 // 将state映射到props的函数  参数固定
 function mapStateToProps(state){
@@ -101,7 +101,7 @@ document.getElementById('root')
 */
 
 
-
+/*
 // redux累加器2
 const renderState = ()=>{
   ReactDOM.render(<FirstRedux />,
@@ -110,3 +110,11 @@ const renderState = ()=>{
 }
 renderState()
 store2.subscribe(renderState)
+*/
+
+ReactDOM.render(
+<Provider store={store2}>
+  <FirstRedux />
+</Provider>,
+  document.getElementById('root')
+  );
